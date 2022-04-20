@@ -1,0 +1,49 @@
+<%- include ("./templates/headerlog") %>
+
+
+<body>
+
+	<div class="containerLogin">
+		<form class="formLogin">
+			
+			<div class="form-group">
+
+				<div class="row">
+
+				<div class="col col-lg-12 col-sm-12 col-md-12">
+					<input type="text" name="correoUsuario" class="form-control" placeholder="Correo" id="correoUsuario">
+				</div>
+
+				<div class="col col-lg-12 col-sm-12 col-md-12 pt-3">
+					<input type="password" name="correoUsuario" class="form-control" placeholder="Contraseña" id="claveUsuario">
+				</div>
+
+				<div class="col col-lg-12 col-sm-12 col-md-12 pt-3">
+					<a href="#" id="lblOlvido"><label class="text text-secondary">Olvidaste tu contraseña?</label></a>
+				</div>
+
+				<div class="col col-lg-12 col-sm-12 col-md-12 pt-4">
+					<button id="btnIngresar" action="/login">
+							INGRESAR
+					</button>			
+				</div>
+
+				<div class="col col-lg-12 col-sm-12 col-md-12 pt-4">
+					<button id="btnCrearCuenta">
+						CREAR CUENTA
+					</button>			
+				</div>
+
+				
+
+			</div>
+
+			</div>
+
+		</form>
+	</div>	
+</body>
+</html>
+
+
+<%- include ("./templates/footer") %>

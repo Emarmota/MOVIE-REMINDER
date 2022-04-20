@@ -1,0 +1,47 @@
+<%- include ("./templates/header") %>
+<!doctype html>
+<html lang="en">
+<body>
+  <div class="body-home">
+  <!--Carousel New Releases Starts-->
+    <div class="carousel">
+      <div class="carouselbox" id="new-releases">
+        <!--This data will be queried from the API-->
+      </div>
+      <a class="switchLeft sliderButton" onclick="sliderScrollLeftNew()"><</a>
+      <a class="switchRight sliderButton" onclick="sliderScrollRightNew()">></a>
+    </div>
+  <!--Carousel New Releases Ends-->
+
+  <!--Carousel Popular Releases Starts-->
+    <div class="carousel">
+      <div class="carouselbox" id="popular-releases">
+        <!--This data will be queried from the API-->
+      </div>
+      <a class="switchLeft sliderButton" onclick="sliderScrollLeftPopular()"><</a>
+      <a class="switchRight sliderButton" onclick="sliderScrollRightPopular()">></a>
+    </div>
+  <!--Carousel Popular Releases Ends-->
+</div>
+  <!-- Optional JavaScript -->
+  <script src="./js/home.js"></script>
+  <!-- jQuery first, then Axios, then Bootstrap JS-->
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <script>
+    $(".carousel").on('click', addID)
+    console.log("click");
+
+
+    function addID(){
+      $.post("/",function(data,status){
+        console.log("added");
+      })
+
+    }
+  </script>
+
+</body>
+<%- include ("./templates/footer") %>

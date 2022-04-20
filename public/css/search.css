@@ -1,0 +1,64 @@
+#movies {
+  width: 100%;
+}
+  
+.wrapper {
+  margin-top: 90px;
+  position: relative;
+  display: flex;
+  min-width: 100px;
+}
+
+#add-movie,
+input[type="submit"] {
+  padding: 5px 20px;
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+  background: #f20544;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 2px 2px 3px #bbb;
+}
+
+#add-movie:hover,
+input[type="submit"]:hover {
+background: #9e183c;
+}
+
+.search-icon {
+  position: absolute;
+  top: 10px;
+  left: 8px;
+  width: 14px;
+}
+
+.clear-icon {
+  position:static;
+  top: 8px;
+  right: 25px;
+  width: 15px;
+  cursor: pointer;
+  visibility: hidden; 
+}
+
+.search {
+  border: 1px solid grey;
+  border-radius: 5px;
+  height: 30px;
+  width: 100%;
+  padding: 2px 23px 2px 30px;
+  outline: 0;
+  background-color: #3f618c;
+}
+
+.search:hover, .search:focus {
+  border: 1.5px solid #009688;
+  background-color: white;
+}
+
+.animal-item {
+  float: left;
+  padding: 10px;
+}
+

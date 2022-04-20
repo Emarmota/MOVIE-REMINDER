@@ -1,0 +1,73 @@
+ body {
+        margin-top: 90px;
+        background-color: #012340;
+        font-family: 'Fira sans',sans-serif;
+    }
+    .textPeople{
+        color: white;
+    }
+
+    .perfilIMG{
+        display:flex;
+        justify-content: center;
+    }
+
+
+/*  tablets */
+@media (min-width: 768px) and (max-width: 1024px)  {
+    body {
+        margin-top: 95px;
+        background-color: #012340;
+        font-family: 'Fira sans',sans-serif;
+    }
+
+    .textPeople{
+        color: white;
+    }
+
+    .perfilIMG{
+        display:flex;
+        justify-content: center;
+    }
+
+}
+
+/* pantallas grandes */
+@media (min-width: 1025px) {
+    body {
+        margin-top: 80px;
+        background-color: #012340;
+        box-sizing: border-box;
+        font-family: 'Fira sans',sans-serif;
+    }
+
+
+    .perfilIMG{
+        padding: 15px;
+        float: left;
+
+
+    }
+
+    .people{
+     padding: 10px;
+    
+    }
+
+
+    .people2{
+        float: left;
+        padding: 10px;
+    }
+    
+    .people3{
+        float: left;
+        padding: 10px;
+    }
+
+    .textPeople{
+        color: white;
+        padding: 10px;
+    }
+
+}
