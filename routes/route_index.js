@@ -9,7 +9,7 @@ app.use(express.json());
 
 
 
-router.get('/', async function(req,res){
+router.get('/index', async function(req,res){
 
   let users = await User.find()
 
