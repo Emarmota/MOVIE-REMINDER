@@ -1,12 +1,12 @@
 body{
-    background-color: #012340;
+    background-color: #f9414f;
     font-family: "Roboto", sans-serif;
     margin-top: 100px;
 }
 :root{
-    --primary: #f20544;
+    --primary: white;
     --ligth:white;
-    --dark:#011826;
+    --dark:#f9414f;
 }
 #navBarID{
     background-color:var(--dark);
@@ -37,7 +37,7 @@ nav{
 }
 
 h1 a{
-    text-decoration: none;
+    text-decoration: none !important;
     color: var(--primary);
     font-size: 28px;
     font-weight: 900;
@@ -45,7 +45,16 @@ h1 a{
     text-transform: uppercase;
 }
 
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
 
+a:hover {
+    color:#ffffff; 
+    text-decoration:none; 
+    cursor:pointer;  
+}
 
 
 .hamburger{
@@ -79,7 +88,7 @@ h1 a{
 
 .hamburger:hover span{
     transform: translateX(5px);
-    background-color: var(--primary);
+    background-color: #f9414f;
 }
 
 .hamburger.is-active  span:nth-child(2){
@@ -94,7 +103,7 @@ h1 a{
 
 .hamburger.is-active:hover span{
     cursor: pointer;
-    background-color: var(--primary);
+    background-color:#f9414f;
 }
 
 
@@ -117,7 +126,7 @@ h1 a{
 }
 
 .menu a.is-active,.menu a:hover{
-    background-color: var(--primary);
+    background-color: #222b31;
 
 }
 .dropdown-container{
@@ -176,4 +185,99 @@ h1 a{
     .menu{
         display: flex;
     }
+}
+
+
+.btnheader,
+.btnheader::after {
+ padding: 16px 20px;
+ font-size: 18px;
+ background: linear-gradient(45deg, transparent 5%, #f9414f 5%);
+ border: 0;
+ color: rgb(255, 255, 255);
+ letter-spacing: 3px;
+ line-height: 1;
+ outline: transparent;
+ position: relative;
+}
+
+.btnheader::after {
+ --slice-0: inset(50% 50% 50% 50%);
+ --slice-1: inset(80% -6px 0 0);
+ --slice-2: inset(50% -6px 30% 0);
+ --slice-3: inset(10% -6px 85% 0);
+ --slice-4: inset(40% -6px 43% 0);
+ --slice-5: inset(80% -6px 5% 0);
+ content: "HOVER ME";
+ display: block;
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background: linear-gradient(45deg, transparent 3%, #00e6f6 3%, #00e6f6 5%, #f9414f 5%);
+ text-shadow: -3px -3px 0px #f8f005, 3px 3px 0px #00e6f6;
+ clip-path: var(--slice-0);
+}
+
+.btnheader:hover::after {
+ animation: 1s glitch;
+ animation-timing-function: steps(2, end);
+}
+
+@keyframes glitch {
+ 0% {
+  clip-path: var(--slice-1);
+  transform: translate(-20px, -10px);
+ }
+
+ 10% {
+  clip-path: var(--slice-3);
+  transform: translate(10px, 10px);
+ }
+
+ 20% {
+  clip-path: var(--slice-1);
+  transform: translate(-10px, 10px);
+ }
+
+ 30% {
+  clip-path: var(--slice-3);
+  transform: translate(0px, 5px);
+ }
+
+ 40% {
+  clip-path: var(--slice-2);
+  transform: translate(-5px, 0px);
+ }
+
+ 50% {
+  clip-path: var(--slice-3);
+  transform: translate(5px, 0px);
+ }
+
+ 60% {
+  clip-path: var(--slice-4);
+  transform: translate(5px, 10px);
+ }
+
+ 70% {
+  clip-path: var(--slice-2);
+  transform: translate(-10px, 10px);
+ }
+
+ 80% {
+  clip-path: var(--slice-5);
+  transform: translate(20px, -10px);
+ }
+
+ 90% {
+  clip-path: var(--slice-1);
+  transform: translate(-10px, 0px);
+ }
+
+ 100% {
+  clip-path: var(--slice-1);
+  transform: translate(0);
+ }
 }

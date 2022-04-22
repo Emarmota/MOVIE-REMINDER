@@ -1,6 +1,6 @@
  body {
         margin-top: 90px;
-        background-color: #012340;
+        background-color: #222b31;
         font-family: 'Fira sans',sans-serif;
     }
     .textPeople{
@@ -17,7 +17,7 @@
 @media (min-width: 768px) and (max-width: 1024px)  {
     body {
         margin-top: 95px;
-        background-color: #012340;
+        background-color: #222b31;
         font-family: 'Fira sans',sans-serif;
     }
 
@@ -36,7 +36,7 @@
 @media (min-width: 1025px) {
     body {
         margin-top: 80px;
-        background-color: #012340;
+        background-color: #222b31;
         box-sizing: border-box;
         font-family: 'Fira sans',sans-serif;
     }

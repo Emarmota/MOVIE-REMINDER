@@ -14,14 +14,15 @@ $(document).ready(function() {
   //     searchBar.value = "";
   //     clearIcon.style.visibility = "hidden";
   //   })
+
   
-  
-  $("#add-movie").on('click', searchMov)
+  $("#test").on('click', searchMov) 
+
   
   function searchMov(e){
     $("#movies").empty()
     e.preventDefault();
-    let item =$(".search").val();
+    let item =$(".searchInput").val();
     console.log(`${item}`)
     let peticion = {
       url:`https://api.themoviedb.org/3/search/movie?api_key=571b4aea0875e39f94c28d07da3d7ca9&query=${item}`,
