@@ -86,14 +86,13 @@ router.get('/delete/:id', async (req,res) =>{
   res.render('delete',{user});
 });
 
-router.post('/add', async(req, res) => {
+router.post('/movies', async(req, res) => {
   let body = req.body
   let userId = body["userId"]
   let movieId = body["movieId"]
 
   let response = await User
-                        .updateOne( {_id: userId}, { movie_list: movieId} )
-                        .exec()
+                      .insertMany( {_id: userId}, { movie_list: movieId} )
   if(response) {
     res.status(200).json({
       message: 'success',
@@ -103,6 +102,32 @@ router.post('/add', async(req, res) => {
   } else {
     res.status(400).json({
       message: 'Error',
+      code: 400,
+      data: []
+    })
+  }
+})
+
+router.get('/movies/:id', async(req, res) => {
+  let userId = req.params.id
+  if(userId) {
+    let response = User.findOne({_id: userId}, { movie_list : 1 })
+    if(response) {
+      res.status(200).json({
+        message: 'Success',
+        code: 200,
+        data: response
+      })
+    } else {
+      res.status(404).json({
+        message: 'User has no movies in favorites',
+        code: 400,
+        data: []
+      })
+    }
+  } else {
+    res.status(404).json({
+      message: 'Error, no User id',
       code: 400,
       data: []
     })
