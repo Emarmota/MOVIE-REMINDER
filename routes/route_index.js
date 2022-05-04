@@ -86,4 +86,27 @@ router.get('/delete/:id', async (req,res) =>{
   res.render('delete',{user});
 });
 
+router.post('/add', async(req, res) => {
+  let body = req.body
+  let userId = body["userId"]
+  let movieId = body["movieId"]
+
+  let response = await User
+                        .updateOne( {_id: userId}, { movie_list: movieId} )
+                        .exec()
+  if(response) {
+    res.status(200).json({
+      message: 'success',
+      code: 200,
+      data: []
+    })
+  } else {
+    res.status(400).json({
+      message: 'Error',
+      code: 400,
+      data: []
+    })
+  }
+})
+
 module.exports = router;
