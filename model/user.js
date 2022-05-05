@@ -5,7 +5,8 @@ const UserSchema = Schema({
     email: String,
     password: String,
     user_id: String,
-    movie_list: []
+    movie_list: [],
+    token: String
 })
 
 module.exports = model('users',UserSchema)
