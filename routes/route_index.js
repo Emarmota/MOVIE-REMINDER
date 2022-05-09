@@ -40,13 +40,19 @@ router.post('/loginUser', async (req, res) => {
   let mail = req.body["mail"];
   let password = req.body["password"];
 
+  console.log(mail, password)
+
   if(mail && password) {
-    let response = await User.findOne({ $match: [ { mail: mail }, { password: password } ] })
-    
-    if(response) {
+    let response = await User.aggregate(
+      [{ 
+        $match: { $and: [ { mail: mail }, { password: password } ]  }
+      }]
+    )
+    console.log(response)
+    if(response.length > 0) {
       let tokenGen = tokenFs();
-      console.log(response["_id"].valueOf())
-      let tokenRs = await User.updateOne({ "_id" : mongoose.Types.ObjectId(response["_id"].valueOf() )}, { token: tokenGen } )
+      console.log(response[0]["_id"].valueOf())
+      let tokenRs = await User.updateOne({ "_id" : mongoose.Types.ObjectId(response[0]["_id"].valueOf() )}, { token: tokenGen } )
 
       if(tokenRs) {
         res.status(200).json({
@@ -65,7 +71,7 @@ router.post('/loginUser', async (req, res) => {
       }
     } else {
       res.status(404).json({
-        message: "Error, not match password",
+        message: "Error, not match password or mail",
         code: 404,
         data: []
       })
