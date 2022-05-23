@@ -36,9 +36,9 @@ router.get('/login', async function(req,res) {
   res.render('login');
 });
 
-router.post('/loginUser', async (req, res) => {
-  let mail = req.body["mail"];
-  let password = req.body["password"];
+router.get('/loginUser', async (req, res) => {
+  let mail = req.query.mail;
+  let password = req.query.password;
 
   console.log(mail, password)
 

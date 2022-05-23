@@ -11,17 +11,15 @@ function login() {
     if(!username && username == "" && !password && password == "")
         return;
 
-    console.log("HelloX")
+    console.log(username, password)
     
-    fetch("/loginUser", {
-        body: {
-            username : username,
-            password : password
-        },
-        method: "POST"
-    }).then(response => console.log(response))
-    .then(response => response.json())
-    .catch(error => console.log(error))
+    fetch(`/loginUser?mail=${username}&password=${password}`, {
+        method: 'GET'
+    }).then(response => response.json())
+    .then(response => {
+        sessionStorage.setItem("userToken", response["data"]["token"])
+        console.log(sessionStorage.getItem("userToken"))
+        window.location.href = "/index"
+    })
 }
-
 document.addEventListener("DOMContentLoaded", loaded())
