@@ -162,6 +162,36 @@ router.post('/movies', async(req, res) => {
   }
 })
 
+router.get("/favorites", async(req, res) => {
+  let tokenQuery = req.query.token
+
+  console.log(token)
+
+  if(tokenQuery) {
+    let response = await User.findOne({token: tokenQuery}, {movie_list: 1})
+    console.log(response)
+    if(response) {
+      res.status(200).json({
+        message: 'Success',
+        code: 200,
+        data: response
+      })
+    } else {
+      res.status(404).json({
+        message: 'Invalid token',
+        code: 400,
+        data: []
+      })
+    }
+  } else {
+    res.status(400).json({
+      message: "Error, no token sent",
+      code: 400,
+      data: []
+    })
+  }
+})
+
 router.get('/movies/:id', async(req, res) => {
   let userId = req.params.id
   if(userId) {
