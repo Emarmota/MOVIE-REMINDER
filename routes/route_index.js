@@ -36,6 +36,11 @@ router.get('/login', async function(req,res) {
   res.render('login');
 });
 
+router.get('/library', async function(req,res) {
+  res.render('library');
+});
+
+
 router.get('/loginUser', async (req, res) => {
   let mail = req.query.mail;
   let password = req.query.password;
